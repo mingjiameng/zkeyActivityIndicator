@@ -13,6 +13,7 @@
 		444D603B1C2A790F008CC3E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444D60391C2A790F008CC3E6 /* Main.storyboard */; };
 		444D603D1C2A790F008CC3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 444D603C1C2A790F008CC3E6 /* Assets.xcassets */; };
 		444D60401C2A790F008CC3E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444D603E1C2A790F008CC3E6 /* LaunchScreen.storyboard */; };
+		444D604C1C2A79D5008CC3E6 /* zkeyActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 444D604A1C2A79D5008CC3E6 /* zkeyActivityIndicatorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		444D603C1C2A790F008CC3E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		444D603F1C2A790F008CC3E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		444D60411C2A790F008CC3E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		444D604A1C2A79D5008CC3E6 /* zkeyActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zkeyActivityIndicatorView.m; sourceTree = "<group>"; };
+		444D604B1C2A79D5008CC3E6 /* zkeyActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zkeyActivityIndicatorView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +61,9 @@
 		444D602F1C2A790F008CC3E6 /* zkeyActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
-				444D60331C2A790F008CC3E6 /* AppDelegate.h */,
-				444D60341C2A790F008CC3E6 /* AppDelegate.m */,
-				444D60361C2A790F008CC3E6 /* ViewController.h */,
-				444D60371C2A790F008CC3E6 /* ViewController.m */,
-				444D60391C2A790F008CC3E6 /* Main.storyboard */,
-				444D603C1C2A790F008CC3E6 /* Assets.xcassets */,
-				444D603E1C2A790F008CC3E6 /* LaunchScreen.storyboard */,
-				444D60411C2A790F008CC3E6 /* Info.plist */,
+				444D60491C2A795A008CC3E6 /* zkeyActivityIndicator */,
+				444D60481C2A794D008CC3E6 /* TestCase */,
+				444D60471C2A7924008CC3E6 /* Root */,
 				444D60301C2A790F008CC3E6 /* Supporting Files */,
 			);
 			path = zkeyActivityIndicator;
@@ -74,9 +72,40 @@
 		444D60301C2A790F008CC3E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				444D603C1C2A790F008CC3E6 /* Assets.xcassets */,
 				444D60311C2A790F008CC3E6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		444D60471C2A7924008CC3E6 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				444D60411C2A790F008CC3E6 /* Info.plist */,
+				444D603E1C2A790F008CC3E6 /* LaunchScreen.storyboard */,
+				444D60391C2A790F008CC3E6 /* Main.storyboard */,
+				444D60331C2A790F008CC3E6 /* AppDelegate.h */,
+				444D60341C2A790F008CC3E6 /* AppDelegate.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		444D60481C2A794D008CC3E6 /* TestCase */ = {
+			isa = PBXGroup;
+			children = (
+				444D60361C2A790F008CC3E6 /* ViewController.h */,
+				444D60371C2A790F008CC3E6 /* ViewController.m */,
+			);
+			name = TestCase;
+			sourceTree = "<group>";
+		};
+		444D60491C2A795A008CC3E6 /* zkeyActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				444D604B1C2A79D5008CC3E6 /* zkeyActivityIndicatorView.h */,
+				444D604A1C2A79D5008CC3E6 /* zkeyActivityIndicatorView.m */,
+			);
+			name = zkeyActivityIndicator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +180,7 @@
 			files = (
 				444D60381C2A790F008CC3E6 /* ViewController.m in Sources */,
 				444D60351C2A790F008CC3E6 /* AppDelegate.m in Sources */,
+				444D604C1C2A79D5008CC3E6 /* zkeyActivityIndicatorView.m in Sources */,
 				444D60321C2A790F008CC3E6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = zkeyActivityIndicator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.overcode.zkeyActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = zkeyActivityIndicator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.overcode.zkeyActivityIndicator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
