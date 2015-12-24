@@ -11,12 +11,10 @@
 #define COVER_VIEW_CORNER_RADIUS 5.0f
 #define ACTIVITY_INDICATOR_WIDTH 37.0f
 #define ACTIVITY_INDICATOR_HEIGHT 37.0f
-#define LEADING_OR_TRAIL_SPACE 30.0f
+#define LEADING_OR_TRAIL_SPACE 15.0f
 #define TOP_OR_BOTTOM_SPACE 15.0f
 #define VERTICAL_SPACE 10.0f
-#define TITLE_LABEL_HEIGHT 21.0f
 #define TITLE_LABEL_FONT_SIZE 15.0f
-#define COVER_VIEW_MAX_WIDTH 150.0f
 
 @interface zkeyActivityIndicatorView ()
 
@@ -74,7 +72,9 @@
     // set the coverView in the center and adjust other subviews's layout correspondingly.
     self.coverView.frame = [self frameOfCoverViewWithTitle:title];
     self.activityIndicator.frame = CGRectMake((self.coverView.frame.size.width - ACTIVITY_INDICATOR_WIDTH) / 2.0f, TOP_OR_BOTTOM_SPACE, ACTIVITY_INDICATOR_WIDTH, ACTIVITY_INDICATOR_HEIGHT);
-    self.titleLabel.frame = CGRectMake(0, self.activityIndicator.frame.origin.y + ACTIVITY_INDICATOR_HEIGHT + VERTICAL_SPACE, self.coverView.frame.size.width, TITLE_LABEL_HEIGHT);
+    
+    CGSize titleLabelSize = [self sizeForText:title];
+    self.titleLabel.frame = CGRectMake((self.coverView.frame.size.width - titleLabelSize.width) / 2.0f, self.activityIndicator.frame.origin.y + ACTIVITY_INDICATOR_HEIGHT + VERTICAL_SPACE, titleLabelSize.width, titleLabelSize.height);
     
     self.titleLabel.text = title;
 }
@@ -106,7 +106,10 @@
     CGSize labelSize = [self sizeForText:title];
     
     CGFloat viewWith = MAX(ACTIVITY_INDICATOR_WIDTH, labelSize.width) + 2 * LEADING_OR_TRAIL_SPACE;
+    viewWith = MIN(viewWith, self.frame.size.width);
+    
     CGFloat viewHeight = ACTIVITY_INDICATOR_HEIGHT + labelSize.height + 2 * TOP_OR_BOTTOM_SPACE + VERTICAL_SPACE;
+    viewHeight = MIN(viewHeight, self.frame.size.height);
     
     CGRect frame = CGRectMake((self.frame.size.width - viewWith) / 2.0f, (self.frame.size.height - viewHeight) / 2.0, viewWith, viewHeight);
     
@@ -115,7 +118,11 @@
 
 - (CGSize)sizeForText:(NSString *)text
 {
-    CGSize maxLabelSize = CGSizeMake(self.frame.size.height - 2 * LEADING_OR_TRAIL_SPACE, COVER_VIEW_MAX_WIDTH);
+    CGFloat maxLabelWidth = self.frame.size.width - 2 * LEADING_OR_TRAIL_SPACE;
+    CGFloat maxLabelHeight = self.frame.size.height - 2 * TOP_OR_BOTTOM_SPACE - VERTICAL_SPACE - ACTIVITY_INDICATOR_HEIGHT
+    ;
+    CGSize maxLabelSize = CGSizeMake(maxLabelWidth, maxLabelHeight);
+    
     CGSize labelSize = [text boundingRectWithSize:maxLabelSize options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:[NSDictionary dictionaryWithObjectsAndKeys:self.titleLabel.font, NSFontAttributeName, nil] context:nil].size;
     
     return labelSize;
@@ -134,6 +141,8 @@
             label.textAlignment = NSTextAlignmentCenter;
             label.textColor = [UIColor whiteColor];
             label.font = [UIFont systemFontOfSize:TITLE_LABEL_FONT_SIZE];
+            label.numberOfLines = 2.0f;
+            
             label;
         });
     }
