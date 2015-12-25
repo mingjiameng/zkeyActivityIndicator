@@ -28,43 +28,48 @@
 
 @implementation zkeyActivityIndicatorView
 
-- (nonnull instancetype)initWithFrame:(CGRect)frame title:(nonnull NSString *)title
+- (instancetype)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     
     if (self) {
-        self.backgroundColor = [UIColor clearColor];
-        
-        [self addSubview:self.coverView];
-        
-        [self setTitle:title];
+        [self customInitialize];
     }
     
     return self;
 }
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.backgroundColor = [UIColor clearColor];
-        // additional initialization
-        
-        [self addSubview:self.coverView];
+        [self customInitialize];
     }
     
     return self;
 }
 
-- (void)setFrame:(CGRect)frame
+
+- (nonnull instancetype)initWithFrame:(CGRect)frame title:(nonnull NSString *)title
 {
-    [super setFrame:frame];
-    // there is no additional initialization
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        [self customInitialize];
+        [self setTitle:title];
+    }
+    
+    return self;
+}
+
+- (void)customInitialize
+{
+    self.backgroundColor = [UIColor clearColor];
     
     [self addSubview:self.coverView];
 }
-
 
 - (void)setTitle:(NSString *)title
 {

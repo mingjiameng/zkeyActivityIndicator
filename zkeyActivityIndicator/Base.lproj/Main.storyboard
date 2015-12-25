@@ -34,21 +34,21 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="点击下面的按钮,使用同一个实例显示不同的提示信息" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMb-oC-v70">
                                 <rect key="frame" x="0.0" y="319" width="219" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTH-PW-Gde">
-                                <rect key="frame" x="0.0" y="545" width="60" height="30"/>
-                                <state key="normal" title="移除控件"/>
-                                <connections>
-                                    <action selector="removeUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nes-hO-2tb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOR-0F-I6N">
                                 <rect key="frame" x="0.0" y="493" width="388" height="33"/>
                                 <state key="normal" title="您所选择的座位还有215张余票，系统正在为您分配座位..."/>
                                 <connections>
                                     <action selector="test03:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Goq-Cp-CWK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTH-PW-Gde">
+                                <rect key="frame" x="0.0" y="534" width="165" height="30"/>
+                                <state key="normal" title="使用自定义方法得到实例"/>
+                                <connections>
+                                    <action selector="customAlloc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7b-Lv-ZXn"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -25,7 +25,6 @@
     
 }
 
-
 - (IBAction)test01:(id)sender {
     [self.activityIndicator removeFromSuperview];
     [self.activityIndicator setTitle:@"请稍等..."];
@@ -44,8 +43,10 @@
     [self.view addSubview:self.activityIndicator];
 }
 
-- (IBAction)removeUI:(id)sender {
+- (IBAction)customAlloc:(id)sender {
     [self.activityIndicator removeFromSuperview];
+    self.activityIndicator = [[zkeyActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300.0f) title:@"使用自定义方法得到实例"];
+    [self.view addSubview:self.activityIndicator];
 }
 
 
