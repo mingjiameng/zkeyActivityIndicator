@@ -49,6 +49,15 @@
     [self.view addSubview:self.activityIndicator];
 }
 
+- (IBAction)hideView:(UIButton *)sender {
+    if (self.activityIndicator.hidden) {
+        self.activityIndicator.hidden = NO;
+        [sender setTitle:@"隐藏控件" forState:UIControlStateNormal];
+    } else {
+        self.activityIndicator.hidden = YES;
+        [sender setTitle:@"显示控件" forState:UIControlStateNormal];
+    }
+}
 
 /*
  * lazy load

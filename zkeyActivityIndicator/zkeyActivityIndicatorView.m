@@ -86,8 +86,8 @@
 
 /*
  * performance improvement
- * start animation when the view is added to superView
- * stop the animation when the view is removed from superView
+ * start animation when the view is added to superView (or displayed)
+ * stop the animation when the view is removed from superView (or setted hidden)
  */
 - (void)removeFromSuperview
 {
@@ -101,6 +101,16 @@
     [self.activityIndicator startAnimating];
 }
 
+- (void)setHidden:(BOOL)hidden
+{
+    [super setHidden:hidden];
+    
+    if (hidden) {
+        [self.activityIndicator stopAnimating];
+    } else {
+        [self.activityIndicator startAnimating];
+    }
+}
 
 /*
  * assistant method
@@ -188,7 +198,6 @@
     
     return _coverView;
 }
-
 
 /*
  // Only override drawRect: if you perform custom drawing.

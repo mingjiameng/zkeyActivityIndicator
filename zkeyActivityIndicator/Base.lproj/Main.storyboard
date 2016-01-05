@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6p-aU-HWH">
-                                <rect key="frame" x="0.0" y="443" width="103" height="30"/>
+                                <rect key="frame" x="0.0" y="425" width="103" height="30"/>
                                 <state key="normal" title="正在更换头像..."/>
                                 <connections>
                                     <action selector="test02:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QfC-Pu-zOu"/>
@@ -38,17 +38,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOR-0F-I6N">
-                                <rect key="frame" x="0.0" y="493" width="388" height="33"/>
+                                <rect key="frame" x="0.0" y="463" width="388" height="33"/>
                                 <state key="normal" title="您所选择的座位还有215张余票，系统正在为您分配座位..."/>
                                 <connections>
                                     <action selector="test03:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Goq-Cp-CWK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTH-PW-Gde">
-                                <rect key="frame" x="0.0" y="534" width="165" height="30"/>
+                                <rect key="frame" x="0.0" y="504" width="165" height="30"/>
                                 <state key="normal" title="使用自定义方法得到实例"/>
                                 <connections>
                                     <action selector="customAlloc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7b-Lv-ZXn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AS-pJ-38W">
+                                <rect key="frame" x="0.0" y="542" width="60" height="30"/>
+                                <state key="normal" title="隐藏控件"/>
+                                <connections>
+                                    <action selector="hideView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0f-z0-Dyd"/>
                                 </connections>
                             </button>
                         </subviews>
